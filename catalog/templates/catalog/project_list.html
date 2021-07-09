@@ -1,0 +1,88 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<!--insert title and meta data-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Projects</title>
+  <meta name="author" content="Samridhi Murarka" />
+  <meta name="description" content="Interns collection" />
+{% endblock %}
+
+{% block links %}<!--insert links to static files here-->
+
+
+<!-- FONTS-------------------------- -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/fontawesome.min.css'%}" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- minimised libraries----------------- -->
+  <link rel="stylesheet" href="{% static 'css/materialize.min.css'%}" />
+  <!-- customised css--------------------------- -->
+  <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %}
+
+{% block header %}<!--insert header html-->
+<div class="container-fluid">
+    <!-- NAVIGATION BAR -->
+    <nav id="navbar">
+      <div class="nav-wrapper">
+        <a href="{% url 'index'%}" class="brand-logo "><img src="{% static 'assets/150dlw.png' %}" alt="Logo" class="nav-logo" /></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="underline right hide-on-med-and-down">
+          <li><a href="{% url 'index'%}">HOME</a></li>
+          <li><a href="{% url 'index'%}#about">ABOUT</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="{% url 'index'%}">HOME</a></li>
+      <li><a href="{% url 'index'%}#about">ABOUT</a></li>
+    </ul>
+
+    <div>&nbsp;</div>
+
+    <div>&nbsp;</div>
+{% endblock %}
+
+{% block main %}<!--insert main html-->
+<main>
+      <div class="row">
+        <!--  -->
+        <section class="section">
+          <h4>
+            Projects
+          </h4>
+          <div>&nbsp;</div>
+          <div class="grid">
+          {% if project_list %}
+            {% for project in project_list %}
+                <div class="mycard mycard--medium">
+                <div class="mycard__details">
+                    <a href="{{ project.get_absolute_url }}">{{project.name}}</a> <br>Tech used :{% for tech in project.tech_used.all %} <br>{{ tech }}{% if not forloop.last %}, {% endif %}{% endfor %}<br>
+                </div>
+                </div>
+            {% endfor %}
+          {% else %}
+            <p>There are no projects in the database.</p>
+          {% endif %}
+          </div>
+      </div>
+      </section>
+
+      <!--  -->
+  </div>
+  </main>
+  </div>
+  <script src="{% static 'scripts/jquery.js'%}"></script>
+  <script src="{% static 'scripts/materialize.min.js'%}"></script>
+  <script>
+    // NAVBAR
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    });
+  </script>
+
+{% endblock %}

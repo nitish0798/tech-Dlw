@@ -1,0 +1,179 @@
+body {
+    font-family: "Montserrat", sans-serif;
+  }
+  .bg-dark {
+    background-color: #2f2f2f !important;
+  }
+  
+  body {
+    background-image: url("../assets/train.jpeg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .overlay{
+    z-index: -3;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  abbr {
+    text-decoration: none !important;
+  }
+  
+  .nav-right{
+      display: flex;
+  }
+
+  .nav-right a{
+    align-items: center
+  }
+
+  #grad2 {
+      height: 100px;
+     background: linear-gradient(brown, cyan);
+  }
+  .form-control {
+    background-color: transparent !important;
+    border-bottom: 1px solid whitesmoke;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    border-radius: 0;
+    color: whitesmoke;
+  }
+  
+  .form-control:focus{
+    outline: none !important;
+    border-bottom: 1px solid red;
+    box-shadow: none;
+    color: whitesmoke;
+  }
+  
+  .nav-right a:hover{
+    color:red;
+  }
+  
+  
+  .home-page {
+    display: flex;
+    height: 100vh;
+    z-index: -1; /* Remove this line if it's not going to be a background! */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .home-page figure {
+    color: red;
+    text-align: center;
+  }
+  
+  .home-page figure figcaption {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  #about {
+    background: #2c2c2c;
+    padding: 8vw;
+    text-align: center;
+  }
+  
+  #departments {
+    display: flex;
+    justify-content: center;
+    background: whitesmoke;
+    color: #2c2c2c;
+    padding: 8vw;
+    text-align: center;
+  }
+  
+  #about h1 {
+    font-weight: bolder;
+  }
+  
+  .padding-15vw {
+    padding: 1.5vw;
+  }
+  
+  .red-color {
+    color: red !important;
+  }
+  
+  .whitesmoke-color{
+      color: whitesmoke;
+  }
+  
+  .dark-color {
+    color: #2c2c2c !important;
+  }
+  
+  .padding-1vw {
+    padding: 1vw !important;
+  }
+  
+  @media screen and (max-width: 800px){
+  
+    .nav-right form div{
+      padding: 1vh;
+      display: flex;
+      width: 40%;
+      margin: 0 auto;
+    }
+    .nav-right a{
+      padding: 2vh;
+      margin: 0 auto;
+    }
+    .nav-right{
+      flex-direction: column;
+      justify-content: center;
+    }
+    #departments>div>p{
+          display: none;
+      }
+  
+      #departments{
+          display: block;
+      }
+  
+      #departments h1:after{
+          content: "Departments";
+          font-weight: bolder;
+      }
+  
+      #departments h1{
+          padding-bottom: vh;
+      }
+  }
+  
+  #myDiv {
+    display: none;
+    text-align: center;
+  }
+  
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+    
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 } 
+      to { bottom:0px; opacity:1 }
+    }
+    
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
+  
+    #loader{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }

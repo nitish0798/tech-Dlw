@@ -1,0 +1,289 @@
+{% extends "base_generic.html" %}
+
+{% block title %}<!--insert title and meta data-->
+        <title>TTC</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Asrar" />
+        <meta name="description" content="TTC Home Page" />
+{% endblock %}
+
+{% block links %}<!--insert links to static files here-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_style.css' %}">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--Icons used from font awesome-->
+    <script src="https://kit.fontawesome.com/065f2af57f.js"></script>
+
+    <!--native javascript for page responsiveness-->
+    <script src="{% static 'scripts/index_script.js' %}"></script>
+
+    <!--Google font CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+{% endblock %}
+
+
+{% block loader %}<!--insert loader html-->
+        <!--Start of loader html from loading.io-->
+        <div id="loader">
+
+            <div class="lds-css ng-scope"><div style="width:100%;height:100%" class="lds-flickr"><div></div><div></div><div></div></div><style type="text/css">@keyframes lds-flickr-opacity {
+                0% {
+                  -webkit-transform: translate(0 0);
+                  transform: translate(0 0);
+                  opacity: 1;
+                }
+                49.99% {
+                  opacity: 1;
+                  -webkit-transform: translate(80px, 0);
+                  transform: translate(80px, 0);
+                }
+                50% {
+                  opacity: 0;
+                  -webkit-transform: translate(80px, 0);
+                  transform: translate(80px, 0);
+                }
+                100% {
+                  opacity: 0;
+                  -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+                }
+              }
+              @-webkit-keyframes lds-flickr-opacity {
+                0% {
+                  -webkit-transform: translate(0 0);
+                  transform: translate(0 0);
+                  opacity: 1;
+                }
+                49.99% {
+                  opacity: 1;
+                  -webkit-transform: translate(80px, 0);
+                  transform: translate(80px, 0);
+                }
+                50% {
+                  opacity: 0;
+                  -webkit-transform: translate(80px, 0);
+                  transform: translate(80px, 0);
+                }
+                100% {
+                  opacity: 0;
+                  -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+                }
+              }
+              @keyframes lds-flickr {
+                0% {
+                  -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+                }
+                50% {
+                  -webkit-transform: translate(80px, 0);
+                  transform: translate(80px, 0);
+                }
+                100% {
+                  -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+                }
+              }
+              @-webkit-keyframes lds-flickr {
+                0% {
+                  -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+                }
+                50% {
+                  -webkit-transform: translate(80px, 0);
+                  transform: translate(80px, 0);
+                }
+                100% {
+                  -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0);
+                }
+              }
+              .lds-flickr {
+                position: relative;
+              }
+              .lds-flickr div {
+                position: absolute;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                top: 60px;
+                left: 20px;
+              }
+              .lds-flickr div:nth-child(1) {
+                background: whitesmoke;
+                -webkit-animation: lds-flickr 1s linear infinite;
+                animation: lds-flickr 1s linear infinite;
+                -webkit-animation-delay: -0.5s;
+                animation-delay: -0.5s;
+              }
+              .lds-flickr div:nth-child(2) {
+                background: red;
+                -webkit-animation: lds-flickr 1s linear infinite;
+                animation: lds-flickr 1s linear infinite;
+                -webkit-animation-delay: 0s;
+                animation-delay: 0s;
+              }
+              .lds-flickr div:nth-child(3) {
+                background: whitesmoke;
+                -webkit-animation: lds-flickr-opacity 1s linear infinite;
+                animation: lds-flickr-opacity 1s linear infinite;
+                -webkit-animation-delay: -0.5s;
+                animation-delay: -0.5s;
+              }
+              .lds-flickr {
+                width: 192px !important;
+                height: 192px !important;
+                -webkit-transform: translate(-96px, -96px) scale(0.96) translate(96px, 96px);
+                transform: translate(-96px, -96px) scale(0.96) translate(96px, 96px);
+              }
+              </style></div>
+
+    </div>
+
+    <!--End of loader html from loading.io-->
+
+{% endblock %}
+
+{% block header %}<!--insert loader html-->
+<div style="display:none;" id="myDiv" class="animate-bottom">
+    <header>
+      <!--Start Navbar-->
+        <section class = "home-page" id="home">
+            <figure>
+                <img src="{% static 'assets/150dlw.png' %}" alt="Logo">
+                <figcaption class="padding-1vw"><h1><abbr title="Technical Training Centre">Technical Training Centre</abbr></h1></figcaption>
+            </figure>
+        </section>
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+        <a class="navbar-brand font-weight-bolder" href="#">
+            <img src="{% static 'assets/150dlw.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+            <abbr title="Technical Training Centre, DLW, Varanasi" >TTC</abbr>
+        </a>
+
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+          <!-- Navbar links -->
+        <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#departments">Departments</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'projects'%}">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'students'%}">Students</a>
+            </li>
+        </ul>
+        <div class="nav-right whitesmoke-color">
+        <!-- Search form -->
+        <form class="form-inline md-form form-sm mt-0 transparent">
+          <div>
+              <i class="fas fa-search"></i>
+              <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" id="search" name="q">
+          </div>
+        </form>
+        <a href="/admin/" class="whitesmoke-color"><i class="fas fa-sign-in-alt"></i> Login</a>
+</div>
+</div>
+    </nav>
+    <!--End Navabar-->
+
+    <!--Header starts-->
+    </header>
+{% endblock %}
+
+{% block main %}<!--insert loader html-->
+<main>
+    <article id="about" class="whitesmoke-color">
+        <h1>About <abbr title="Technical Training Centre" class="red-color">TTC</abbr> <abbr title="Diesel Locomotive Works" class="red-color">DLW</abbr>, Varanasi</h1>
+        <p class="padding-15vw">
+                Technical Training Centre has been inaugurated by Shri V. V. Giri, Governor of Uttar Pradesh on 2nd Feb. 1959. It provides the training in different categories like Induction Training for newly recruited / promoted staff and supervisors, Refresher, General Management, Professional, Quality &amp; Industrial Related Safety Courses and Skill Upgradation Courses for DLW staff.Apart from above TTC also organize internship courses for Degree and Diploma Engineering &amp; Management students and different training for other Zonal Railways staff and supervisors.
+                <br><br>To know more go to <a href="http://ttcdlwvaranasi.org/Default.aspx" target="_blank" class="red-color">official website</a>.
+        </p>
+    </article>
+
+    <article id="departments">
+        <h1></h1>
+        <div id="machine" class="padding-1vw">
+        <a href="http://ttcdlwvaranasi.org/Facility.aspx" target="_blank" class="dark-color">
+            <h3>
+                <figure>
+                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                    <figcaption>Machine Shop</figcaption>
+                </figure>
+            </h3></a>
+            <p>
+                In Machine shop, facilities for various machining process such as turning, taper turning, facing, chamfering, grooving, drilling, boring, milling, grinding, shaping, slotting has been provided for training of Act Apprentices and Trainee Artisans.
+            </p>
+        </div>
+
+        <div id="fitting" class="padding-1vw">
+            <a href="http://ttcdlwvaranasi.org/Facility.aspx" target="_blank" class="red-color"><h3>
+                <figure>
+                    <i class="fa fa-industry" aria-hidden="true"></i>
+                    <figcaption>Fitting Shop</figcaption>
+                </figure>
+            </h3></a>
+            <p>
+                In fitting shop, training for Carpenter, Painter, Sheet metal worker, Mechanic motor vehicle, Crane operator is being provided to train Act Apprentices & Trainee Artisan. Facilities like Bench Vice, Bend Saw Machine Pillar Type Drill Machine Leg vice are available in Fitting Shop.
+            </p>
+        </div>
+
+        <div id="elec" class="padding-1vw">
+            <a href="http://ttcdlwvaranasi.org/Facility.aspx" class="red-color" target="_blank"><h3>
+                <figure>
+                    <i class="fa fa-microchip" aria-hidden="true"></i>
+                    <figcaption>Electrical & Electronics Lab</figcaption>
+                </figure>
+            </h3></a>
+            <p>
+                    TTC have and Electrical & Electronics Lab having facility of different types of trainers (Electrical & Electronics) like Single Phase & Three Phase motor trainer, alternator trainer & DC machine trainer, Star delta transformer (R.L.C. loaded) and different electronic circuit trainers to trained Act Apprentices (Electrical, Electronics and Wireman Trade) & Trainee Artisan.
+            </p>
+        </div></a>
+
+        <div id="conf" class="padding-1vw">
+            <a href="http://ttcdlwvaranasi.org/Facility.aspx" class="dark-color" target="_blank"><h3>
+                <figure>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <figcaption>Conference Hall</figcaption>
+                </figure>
+            </h3></a>
+            <p>
+                    An air conditioned Conference/Meeting Hall is available for multipurpose use with seating capacity of 90seatshaving facilities of Electronic Podium, PA system and Overhead LCD projector.
+            </p>
+        </div>
+    </article>
+</main>
+
+{% endblock %}
+
+{% block footer %}<!--insert footer html-->
+<footer>
+
+</footer>
+</div>
+{% endblock %}
+
+

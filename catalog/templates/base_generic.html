@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <link rel = "icon" type = "image/png" href = "{% static 'assets/150dlw.png' %}">
+
+  {% block title %}<!--insert title and meta data-->{% endblock %}
+
+  {% block links %}<!--insert links to static files here-->{% endblock %}
+
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" onload="myFunction()">
+
+    {% block loader %}<!--insert loader html-->{% endblock %}
+
+    {% block header %}<!--insert header html-->{% endblock %}
+
+    {% block main %}<!--insert main html-->{% endblock %}
+    
+    {% block footer %}<!--insert footer html-->{% endblock %}
+    
+</body>
+</html>
